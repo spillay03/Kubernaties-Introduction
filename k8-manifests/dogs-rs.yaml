@@ -1,0 +1,33 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dogs
+  labels:
+    name: dogs
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: dogs
+  namespace: dogs
+  labels:
+    course: clo835
+    assignment: assignment-2
+    app: dogs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      course: clo835
+      assignment: assignment-2
+      app: dogs
+  template:
+    metadata:
+      labels:
+        course: clo835
+        assignment: assignment-2
+        app: dogs
+    spec:
+      containers:
+      - name: dogs
+        image: 181212752313.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2:dogs

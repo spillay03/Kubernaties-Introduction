@@ -1,0 +1,24 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dogs
+  labels:
+   name: dogs
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dogs
+  labels:
+    course: clo835
+    assignment: assignment-2
+    app: dogs
+spec:
+  containers:
+  - name: dogs
+    image: 181212752313.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2:dogs
+    ports: 
+    - name: web
+      containerPort: 81
+      protocol: TCP
+  

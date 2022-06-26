@@ -1,0 +1,33 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: cats
+  labels:
+    name: cats
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: cats
+  namespace: cats
+  labels:
+    course: clo835
+    assignment: assignment-2
+    app: cats
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      course: clo835
+      assignment: assignment-2
+      app: cats
+  template:
+    metadata:
+      labels:
+        course: clo835
+        assignment: assignment-2
+        app: cats
+    spec:
+      containers:
+      - name: cats
+        image: 181212752313.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2:cats
