@@ -19,6 +19,6 @@ spec:
     image: 181212752313.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2:dogs
     ports: 
     - name: web
-      containerPort: 81
+      containerPort: 80
       protocol: TCP
   
