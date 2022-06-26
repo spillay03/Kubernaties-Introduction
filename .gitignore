@@ -1,0 +1,6 @@
+.terraform
+.terraform.lock.hcl
+*.pub
+*week5*
+terraform.tfstate.backup
+terraform.tfstate
